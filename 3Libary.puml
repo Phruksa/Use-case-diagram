@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+actor Student as s
+package Professional {
+  actor Teacher as t
+  
+}
+package Library {
+  usecase "Search for books" as UC1
+  usecase "Borrow a book" as UC2
+  usecase "Return the book" as UC4
+  usecase "Book not found" as UC5
+ usecase "Over time returned the book." as UC6
+ 
+}
+s --> UC1
+s --> UC2
+s --> UC4
+UC2-->t
+UC4-->t
+UC5<..UC4
+UC6<..UC4
+@enduml

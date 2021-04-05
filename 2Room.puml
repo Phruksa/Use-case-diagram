@@ -1,0 +1,32 @@
+@startuml
+left to right direction
+actor Customer as c
+package Professional {
+  actor personnel as p
+  
+}
+package Room {
+  usecase "Check in" as UC1
+  usecase "Check out" as UC2
+  usecase "Check room" as UC4
+  usecase "Payment" as UC5
+ usecase "Cost calculation" as UC6
+ usecase "No cash" as UC7
+usecase "Check for damage" as UC8
+usecase "Insurance refund" as UC10
+usecase "Calculate the penalty" as UC11
+}
+c --> UC1
+c --> UC2
+c --> UC5
+p --> UC4
+p --> UC5
+p --> UC6
+p --> UC8
+UC7<..UC5
+UC10<..UC8
+UC11<..UC8
+UC1-->UC4
+UC1-->UC6
+UC2-->UC8
+@enduml
